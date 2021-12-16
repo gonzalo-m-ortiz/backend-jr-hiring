@@ -26,7 +26,7 @@ class Server {
             const response = this.db[collectionName].find(document => document.id === documentId);
     
             // check response is empty
-            if (response === undefined) {
+            if (!response) {
                 return new NotFound(`No data found with the id equal as "${documentId}".`);
             }
     
